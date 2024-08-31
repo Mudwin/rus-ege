@@ -1,0 +1,255 @@
+:root {
+  --background-color: #282a36;
+  --current-line-color: #44475a;
+  --white-color: #f8f8f2;
+  --dark-blue-color: #6272a4;
+  --light-blue-color: #8be9fd;
+  --green-color: #50fa7b;
+  --orange-color: #ffb86c;
+  --pink-color: #ff79c6;
+  --purple-color: #bd93f9;
+  --red-color: #ff5555;
+  --yellow-color: #f1fa8c;
+  --checkbox-color: rgba(30, 255, 86, 0.7);
+  --stepik-color: #222222;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--white-color);
+  font-family: "Stolzl";
+  overflow: visible;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 740px;
+  padding-inline: 20px;
+  padding-block: 50px;
+  font-size: 19px;
+  /* border: 1px red solid; */
+}
+.task_title {
+  margin-bottom: 10px;
+  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+}
+.task_title a {
+  background-color: var(--orange-color);
+  color: var(--background-color);
+  border-radius: 5px;
+  padding-block: 3px;
+  padding-inline: 5px;
+  font-weight: 800;
+  transition: all 0.2s ease 0s;
+  text-shadow: 0px 3px 12px rgba(255, 184, 108, 1);
+}
+.task_title::after {
+  content: "← тык";
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 400;
+  transition: all 0.2s ease 0s;
+  color: var(--current-line-color);
+}
+.task_title a:hover {
+  background-color: var(--yellow-color);
+  color: var(--current-line-color);
+  text-shadow: 0px -6px 16px #f1fa8c;
+}
+.task_title:hover::after {
+  color: var(--dark-blue-color);
+}
+.task_title a:active {
+  color: var(--dark-blue-color);
+}
+.task_container {
+  margin-bottom: 30px;
+}
+.task_item {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 2px;
+  position: relative;
+  transition: all 0.2s ease;
+  /* border: 1px red solid; */
+}
+.task_item:hover {
+  background: rgba(68, 71, 90, 0.3);
+}
+.task_checkbox {
+  cursor: pointer;
+  min-width: 17px;
+  height: 17px;
+  border: 2px #cccfdb solid;
+  border-radius: 3px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-right: 6px;
+  margin-top: 2px;
+  box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+  transition: all 0.2s ease;
+}
+.task_label {
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+}
+.task_help {
+  /* border: 1px red solid; */
+  margin-top: 30px;
+}
+.task_help p {
+  color: var(--orange-color);
+  font-weight: 500;
+}
+.task_help a {
+  font-style: italic;
+  color: var(--green-color);
+  text-decoration: underline;
+  transition: all 0.2s ease;
+  font-weight: 400;
+}
+.task_help a:hover {
+  color: var(--checkbox-color);
+  text-decoration: none;
+}
+
+.progress-bar_container {
+  position: fixed;
+  top: 40px;
+  right: 80px;
+  padding-top: 10px;
+}
+.progress-bar_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--orange-color);
+  font-weight: 600;
+  text-shadow: 0px 0px 12px rgba(255, 184, 108, 0.3);
+}
+.progress-bar_comment {
+  font-size: 20px;
+}
+.progress-bar_percent {
+  font-size: 45px;
+  font-weight: 400;
+  text-align: center;
+}
+.progress-bar_number {
+  letter-spacing: 1px;
+}
+.course_container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+  /* border: 1px red solid; */
+}
+.course_item {
+  transition: all 0.2s ease;
+}
+.course_item::after {
+  content: "← тык";
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 400;
+  transition: all 0.2s ease 0s;
+  color: var(--current-line-color);
+}
+.course_item:hover::after {
+  color: var(--dark-blue-color);
+}
+.course_link {
+  font-weight: 500;
+  display: inline-block;
+  background-color: var(--stepik-color);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 340px;
+  box-shadow: 0px 0px 15px var(--stepik-color);
+  transition: all 0.3s ease;
+}
+.course_link:hover {
+  background-color: var(--current-line-color);
+  box-shadow: 0px -3px 12px var(--current-line-color);
+}
+._mark {
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  width: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+._checked {
+  background-color: var(--checkbox-color);
+}
+._done {
+  text-decoration: line-through;
+}
+._hidden {
+  opacity: 0;
+}
+._visible {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .progress-bar_container {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* border: 1px red solid; */
+  }
+  .progress-bar_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .container {
+    padding-block: 30px;
+  }
+  .task_container:first-child {
+    margin-top: 40px;
+  }
+  .task_container {
+    margin-bottom: 40px;
+  }
+  .task_title {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+  .task_item {
+    margin-bottom: 8px;
+    padding: 4px;
+  }
+  .progress-bar_comment {
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  .progress-bar_percent {
+    font-size: 35px;
+  }
+  .task_help p {
+    line-height: 1.8;
+  }
+  .task_checkbox {
+    min-width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    margin-top: 2px;
+  }
+  ._mark {
+    top: 9px;
+    left: 7px;
+  }
+}
