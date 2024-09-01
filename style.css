@@ -14,6 +14,22 @@
   --stepik-color: #222222;
 }
 
+@font-face {
+  font-family: "Stolzl";
+  src: url("./fonts/Stolzl-Book.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("./fonts/Stolzl-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Stolzl";
+  src: url("./fonts/Stolzl-Bold.woff2") format("woff2");
+  font-weight: 800;
+}
 body {
   background-color: var(--background-color);
   color: var(--white-color);
@@ -130,7 +146,7 @@ body {
   flex-direction: column;
   align-items: center;
   color: var(--orange-color);
-  font-weight: 600;
+  font-weight: 800;
   text-shadow: 0px 0px 12px rgba(255, 184, 108, 0.3);
 }
 .progress-bar_comment {
@@ -247,6 +263,10 @@ body {
     height: 18px;
     margin-right: 7px;
     margin-top: 2px;
+  }
+  .course_link {
+    font-size: 17px;
+    min-width: 300px;
   }
   ._mark {
     top: 9px;
